@@ -13,8 +13,8 @@ import CartItem from '../Checkout/CartItem';
 function Payment() {
     const [{ basket, totalPrice, user }, dispatch] = useStateValue();
     const productIds = Object.keys(basket).filter((id) => basket[id]);
-    const arrayOfBasket = Object.keys(basket).map(id => basket[id]);
-
+    const arrayOfBasket = Object.keys(basket).map(id => basket[id]).filter(obj => obj);
+    
     const history = useHistory();
     
     const stripe = useStripe();
